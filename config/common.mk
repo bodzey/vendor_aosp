@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_BRAND ?= EvolutionX
+PRODUCT_BRAND ?= RohieOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -57,7 +57,7 @@ endif
 # Some permissions
 PRODUCT_COPY_FILES += \
     vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
-    vendor/aosp/config/permissions/privapp-permissions-evolution.xml:system/etc/permissions/privapp-permissions-evolution.xml
+    vendor/aosp/config/permissions/privapp-permissions-rohie.xml:system/etc/permissions/privapp-permissions-rohie.xml
 
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/aosp/prebuilt/common/etc/init/*.rc),\
@@ -185,8 +185,8 @@ include vendor/aosp/config/ota.mk
 # GApps
 include vendor/gapps/config.mk
 
-# Pixel Style
-include vendor/pixelstyle/config.mk
+# Cat Style
+include vendor/catstyle/config.mk
 
 # Plugins
 include packages/apps/PotatoPlugins/plugins.mk
@@ -199,3 +199,4 @@ PRODUCT_PACKAGES += \
 include vendor/google-customization/config.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
+

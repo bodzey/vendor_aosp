@@ -1,9 +1,6 @@
 # Versioning System
-EVO_BASE_VERSION := 4.6
-EVO_CODENAME := Franklin
-EVO_DONATE_URL ?= Unknown
-EVO_MAINTAINER ?= Unknown
-EVO_SUPPORT_URL ?= https://t.me/EvolutionX
+ROHIE_BASE_VERSION := CatX
+ROHIE_MAINTAINER ?= Unknown
 
 # Set all versions
 CUSTOM_BUILD_TYPE ?= UNOFFICIAL
@@ -16,24 +13,20 @@ CUSTOM_DATE_MINUTE := $(shell date -u +%M)
 CUSTOM_BUILD_DATE_UTC := $(shell date -d '$(CUSTOM_DATE_YEAR)-$(CUSTOM_DATE_MONTH)-$(CUSTOM_DATE_DAY) $(CUSTOM_DATE_HOUR):$(CUSTOM_DATE_MINUTE) UTC' +%s)
 CUSTOM_BUILD_DATE := $(CUSTOM_DATE_YEAR)$(CUSTOM_DATE_MONTH)$(CUSTOM_DATE_DAY)-$(CUSTOM_DATE_HOUR)$(CUSTOM_DATE_MINUTE)
 
-CUSTOM_PLATFORM_VERSION := 10.0
+CUSTOM_PLATFORM_VERSION := 11
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(CUSTOM_BUILD))
 
-EVO_VERSION := $(EVO_CODENAME)-v$(EVO_BASE_VERSION)-$(TARGET_PRODUCT_SHORT)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
-
-CUSTOM_VERSION := EvolutionX_$(EVO_BASE_VERSION)_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
-CUSTOM_VERSION_PROP := 10
+CUSTOM_VERSION := RohieOS_$(ROHIE_BASE_VERSION)_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
+CUSTOM_VERSION_PROP := eleven
 
 CUSTOM_PROPERTIES := \
-    org.evolution.version=$(EVO_VERSION) \
-    org.evolution.version.prop=$(CUSTOM_VERSION_PROP) \
-    org.evolution.version.display=$(CUSTOM_VERSION) \
-    org.evolution.build_version=$(EVO_BASE_VERSION) \
-    org.evolution.build_date=$(CUSTOM_BUILD_DATE) \
-    org.evolution.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.evolution.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.evolution.build_donate_url=$(EVO_DONATE_URL) \
-    org.evolution.build_maintainer=$(EVO_MAINTAINER) \
-    org.evolution.build_support_url=$(EVO_SUPPORT_URL) \
-    org.evolution.build_codename=$(EVO_CODENAME)
+    org.rohie.version=$(CUSTOM_PLATFORM_VERSION) \
+    org.rohie.version.prop=$(CUSTOM_VERSION_PROP) \
+    ro.rohie.version.display=$(CUSTOM_VERSION) \
+    org.rohie.build_version=$(ROHIE_BASE_VERSION) \
+    org.rohie.build_date=$(CUSTOM_BUILD_DATE) \
+    org.rohie.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    org.rohie.build_type=$(CUSTOM_BUILD_TYPE) \
+    org.rohie.build_maintainer=$(ROHIE_MAINTAINER)
+
