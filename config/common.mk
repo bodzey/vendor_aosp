@@ -119,14 +119,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/aosp/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/aosp/overlay/common
 
-# OmniStyle
-PRODUCT_PACKAGES += \
-    OmniStyle
-
-# TouchGestures
-PRODUCT_PACKAGES += \
-    TouchGestures
-
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
@@ -136,28 +128,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PACKAGES += \
     PixelSetupWizardOverlay \
     PixelSetupWizardAodOverlay
-
-# Custom Overlays
-# Settings
-PRODUCT_PACKAGES += \
-    SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
-    SystemDarkGrayOverlay \
-    SystemUIDarkGrayOverlay \
-    SystemStyleOverlay \
-    SystemUIStyleOverlay \
-    SystemNightOverlay \
-    SystemUINightOverlay \
-    SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay \
-    SystemMaterialOceanOverlay \
-    SystemUIMaterialOceanOverlay \
-    SystemBakedGreenOverlay \
-    SystemUIBakedGreenOverlay \
-    SystemChocoXOverlay \
-    SystemUIChocoXOverlay \
-    SystemDarkAubergineOverlay \
-    SystemUIDarkAubergineOverlay
 
 # Themed bootanimation
 TARGET_MISC_BLOCK_OFFSET ?= 0
@@ -183,20 +153,14 @@ include vendor/aosp/config/branding.mk
 include vendor/aosp/config/ota.mk
 
 # GApps
-include vendor/gapps/config.mk
+include vendor/gms/config.mk
 
 # Cat Style
 include vendor/catstyle/config.mk
 
-# Plugins
-include packages/apps/PotatoPlugins/plugins.mk
-
 #Terminal
 PRODUCT_PACKAGES += \
     Terminal
-
-# Customization
-include vendor/google-customization/config.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
